@@ -130,7 +130,7 @@ def play_again():
 
 def play_game():
     intro()
-    choices = []
+
     main_theme()
 
 play_game()
