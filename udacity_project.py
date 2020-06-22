@@ -55,7 +55,7 @@ def fight():
         else:
             print_pause("Sorry, I don't understand.Please Enter number 1 or 2.\n")
 
-    main_theme()
+    play_again()
 
 def cave():
 
@@ -94,7 +94,7 @@ def attack_with_sword():
         print_pause("But the gorgon takes one look at your shiny new toy and runs away!\n")
         print_pause("You have rid the town of the gorgon. You are victorious!\n")
         print_pause("YOU WON\n")
-        play_again()
+        
 
 def attack_without_sword():
 
@@ -110,6 +110,7 @@ def play_again():
 
         if play_again_response == 'y':
             print_pause("Excellent! Restarting the game ...\n")
+            play_game()
             break
         elif play_again_response == 'n':
             print_pause("Thank you for supporting the Game.See you soon again...\n")
@@ -121,6 +122,8 @@ def play_game():
     intro()
     choices = []
     main_theme()
+
+play_game()
 
 
         
