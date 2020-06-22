@@ -1,5 +1,5 @@
 import time
-
+choices = []
 
 def print_pause(message_to_print):
     print(message_to_print)
@@ -22,19 +22,102 @@ def fight():
 
     while True:
 
-        fight_response = int(input(("Would you like to (1) fight or (2) run away?/n")))
-        if fight_response == 1:
-            print_pause("You do your best...")
-            print_pause("but your dagger is no match for the pirate.")
-            print_pause("You have been defeated!")
+        fight_response = int(input(("Would you like to (1) fight or (2) run away?\n")))
+
+        if "sword_taken" in choices:
+            attack_with_sword()
+            break
+        else:
+            attack_without_sword()
+            break
+    main_theme()
+
+def cave():
+    print_pause("You peer cautiously into the cave.\n")
+    print_pause("It turns out to be only a very small cave.\n")
+    print_pause("Your eye catches a glint of metal behind a rock.\n")
+    print_pause("You have found the magical Sword of Ogoroth and Sword of Zeus\n")
+    while True:
+
+        sword_response = int(input(("Would you like to take (1) Sword of Ogoroth  or (2) Sword of Zeus?\n")))
+        if sword_response == 1:
+            print_pause("Great Choice...\n")
+            print_pause("A ranged attack that silences enemies with bolt of FireBalls.\n")
+            choices.append("sword_taken")
+            break
+        elif sword_response == 2:
+            print_pause("Great Choice...\n")
+            print_pause("A ranged attack that silences enemies with bolt of electricity.\n")
+            choices.append("sword_taken")
+            break
+        else:
+            print_pause("Sorry, I don't understand.Please Enter number 1 or 2.\n")
+    print_pause("You discard your silly old dagger and take the sword of your choice with you.\n")
+    print_pause("You walk back out to the field.\n")
+    main_theme()
+
+def main_theme():
+
+    while True:
+
+        print_pause("Enter 1 to knock on the door of the house.\n")
+        print_pause("Enter 2 to peer into the cave.\n")
+
+        player_response = int(input("What would you like to do? (Please enter 1 or 2.)\n"))
+        if player_response == 1:
+            fight()
+            break
+        elif player_response == 2:
+            cave()
+            break
+        else:
+            print_pause("Sorry, I don't understand.Please Enter number 1 or 2.\n")
+            
+def attack_with_sword():
+    
+    if fight_response == 1:
+        print_pause("As the gorgon moves to attack, you unsheath your new sword.\n")
+        print_pause("The Sword of Ogoroth shines brightly in your hand as you brace yourself for the attack.\n")
+        print_pause("But the gorgon takes one look at your shiny new toy and runs away!\n")
+        print_pause("You have rid the town of the gorgon. You are victorious!\n")
+    elif fight_response == 2:
+        print_pause("You run back into the field. Luckily, you don't seem to have been followed.\n")
+    else:
+        print_pause("Sorry, I don't understand.Please Enter number 1 or 2.\n")
+
+
+def attack_without_sword():
+
+    if fight_response == 1:
+        print_pause("You do your best...\n")
+        print_pause("but your dagger is no match for the pirate.\n")
+        print_pause("You have been defeated!.\n")
+    elif fight_response == 2:
+        print_pause("You run back into the field. Luckily, you don't seem to have been followed.\n")
+    else:
+        print_pause("Sorry, I don't understand.Please Enter number 1 or 2.\n")
+
+intro()
+main_theme()
+
 
         
 
+#while True:
+    #print_pause("Enter 1 to knock on the door of the house.\n")
+    #print_pause("Enter 2 to peer into the cave.\n")
+    #response = int(input("What would you like to do?\n"))
 
-while True:
-    print_pause("Enter 1 to knock on the door of the house.\n")
-    print_pause("Enter 2 to peer into the cave.\n")
-    response = int(input("What would you like to do?\n"))
+    #if response == 1:
+        #fight()
 
-    if response == 1:
+#while True:
 
+        #sword_choice = int(input("Press 1 to select Magical Sword of Ogoroth or Press 2 to select Sword of Zeus")  
+        #if sword_choice == 1:
+            #print_pause("Great choice !")
+            ##elif sword_choice == 2:
+            #print_pause("A ranged attack that silences enemies with bolt of electricity")
+            ##break
+        #else:
+            #print_pause("Sorry, I don't understand.Please Enter number 1 or 2")
