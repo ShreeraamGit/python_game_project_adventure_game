@@ -111,10 +111,9 @@ def play_again():
         if play_again_response == 'y':
             print_pause("Excellent! Restarting the game ...\n")
             play_game()
-            break
         elif play_again_response == 'n':
             print_pause("Thank you for supporting the Game.See you soon again...\n")
-            break
+
         else:
             print_pause("Sorry, I don't understand.Please Enter number 'y' or 'n'.\n")
 
