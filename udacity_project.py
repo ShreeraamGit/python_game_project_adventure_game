@@ -57,44 +57,69 @@ def fight():
     main_theme()
 
 def cave():
-    print_pause("You peer cautiously into the cave.\n")
-    print_pause("It turns out to be only a very small cave.\n")
-    print_pause("Your eye catches a glint of metal behind a rock.\n")
-    print_pause("You have found the magical Sword of Ogoroth and Sword of Zeus\n")
-    while True:
 
-        sword_response = input("Would you like to take (1) Sword of Ogoroth  or (2) Sword of Zeus?\n")
-        if sword_response == '1':
-            print_pause("Great Choice...\n")
-            print_pause("A ranged attack that silences enemies with bolt of FireBalls.\n")
-            choices.append("sword_taken")
-            break
-        elif sword_response == '2':
-            print_pause("Great Choice...\n")
-            print_pause("A ranged attack that silences enemies with bolt of electricity.\n")
-            choices.append("sword_taken")
-            break
-        else:
-            print_pause("Sorry, I don't understand.Please Enter number 1 or 2.\n")
-    print_pause("You discard your silly old dagger and take the sword of your choice with you.\n")
-    print_pause("You walk back out to the field.\n")
-    main_theme()
+    if "sword_taken" in choices:
+        print_pause("Oh boy!!!!!!!. We have visited the Cave already and taken the sword of our Choice\n")
+        print_pause("We cannot enter the cave again\n")
+        main_theme()
 
-
+    elif "sword_taken" not in choices:
+        print_pause("You peer cautiously into the cave.\n")
+        print_pause("It turns out to be only a very small cave.\n")
+        print_pause("Your eye catches a glint of metal behind a rock.\n")
+        print_pause("You have found the magical Sword of Ogoroth and Sword of Zeus\n")
+        while True:
             
+            sword_response = input("Would you like to take (1) Sword of Ogoroth  or (2) Sword of Zeus?\n")
+            if sword_response == '1':
+                print_pause("Great Choice...\n")
+                print_pause("A ranged attack that silences enemies with bolt of FireBalls.\n")
+                choices.append("sword_taken")
+                break
+            elif sword_response == '2':
+                print_pause("Great Choice...\n")
+                print_pause("A ranged attack that silences enemies with bolt of electricity.\n")
+                choices.append("sword_taken")
+                break
+            else:
+                print_pause("Sorry, I don't understand.Please Enter number 1 or 2.\n")
+        print_pause("You discard your silly old dagger and take the sword of your choice with you.\n")
+        print_pause("You walk back out to the field.\n")
+        main_theme()
+           
 def attack_with_sword():
         print_pause("As the gorgon moves to attack, you unsheath your new sword.\n")
         print_pause("The Sword of Ogoroth shines brightly in your hand as you brace yourself for the attack.\n")
         print_pause("But the gorgon takes one look at your shiny new toy and runs away!\n")
         print_pause("You have rid the town of the gorgon. You are victorious!\n")
+        play_again()
 
 def attack_without_sword():
 
         print_pause("You do your best...\n")
         print_pause("but your dagger is no match for the pirate.\n")
         print_pause("You have been defeated!.\n")
+        play_again()
+
+def play_again():
+
+    while True:
+
+        play_again_response = input("Would you like to play again? (y/n)\n").lower()
+
+        if play_again_response == 'y':
+            print_pause("Excellent! Restarting the game ...\n")
+            intro()
+            break
+        elif play_again_response == 'n':
+            print_pause("Thank you for supporting the Game.See you soon again...\n")
+            break
+        else:
+            print_pause("Sorry, I don't understand.Please Enter number 'y' or 'n'.\n")
+
 
 intro()
+choices = []
 main_theme()
 
 
