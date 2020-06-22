@@ -20,7 +20,7 @@ def main_theme():
         print_pause("Enter 1 to knock on the door of the house.\n")
         print_pause("Enter 2 to peer into the cave.\n")
 
-        player_response = input("What would you like to do? (Please enter 1 or 2.)\n")
+        player_response = input("What would you like to do now? (Please enter 1 or 2.)\n")
         if player_response == '1':
             fight()
             break
@@ -51,6 +51,7 @@ def fight():
                 break
         elif fight_response == '2':
             print_pause("You run back into the field. Luckily, you don't seem to have been followed.\n")
+            main_theme()
         else:
             print_pause("Sorry, I don't understand.Please Enter number 1 or 2.\n")
 
@@ -92,6 +93,7 @@ def attack_with_sword():
         print_pause("The Sword of Ogoroth shines brightly in your hand as you brace yourself for the attack.\n")
         print_pause("But the gorgon takes one look at your shiny new toy and runs away!\n")
         print_pause("You have rid the town of the gorgon. You are victorious!\n")
+        print_pause("YOU WON\n")
         play_again()
 
 def attack_without_sword():
@@ -99,7 +101,6 @@ def attack_without_sword():
         print_pause("You do your best...\n")
         print_pause("but your dagger is no match for the pirate.\n")
         print_pause("You have been defeated!.\n")
-        play_again()
 
 def play_again():
 
@@ -109,7 +110,6 @@ def play_again():
 
         if play_again_response == 'y':
             print_pause("Excellent! Restarting the game ...\n")
-            intro()
             break
         elif play_again_response == 'n':
             print_pause("Thank you for supporting the Game.See you soon again...\n")
@@ -117,10 +117,10 @@ def play_again():
         else:
             print_pause("Sorry, I don't understand.Please Enter number 'y' or 'n'.\n")
 
-
-intro()
-choices = []
-main_theme()
+def play_game():
+    intro()
+    choices = []
+    main_theme()
 
 
         
