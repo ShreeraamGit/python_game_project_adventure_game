@@ -3,7 +3,7 @@ choices = []
 
 def print_pause(message_to_print):
     print(message_to_print)
-    time.sleep(1)
+    time.sleep(.5)
 
 def intro():
     time.sleep(1)
@@ -31,11 +31,19 @@ def main_theme():
             print_pause("Sorry, I don't understand.Please Enter number 1 or 2.\n")
 
 def fight():
-    print_pause("You approach the door of the house.\n")
-    print_pause("You are about to knock when the door opens and out steps a pirate.\n")
-    print_pause("Eep! This is the pirate's house!\n")
-    print_pause("The pirate attacks you!\n")
-    print_pause("You feel a bit under-prepared for this, what with only having a tiny dagger.\n")
+
+    if "sword_taken" not in choices:
+        print_pause("You approach the door of the house.\n")
+        print_pause("You are about to knock when the door opens and out steps a pirate.\n")
+        print_pause("Eep! This is the pirate's house!\n")
+        print_pause("The pirate attacks you!\n")
+        print_pause("You feel a bit under-prepared for this, what with only having a tiny dagger.\n")
+    elif "sword_taken" in choices:
+        print_pause("You approach the door of the house.\n")
+        print_pause("You are about to knock when the door opens and out steps a pirate.\n")
+        print_pause("Eep! This is the pirate's house!\n")
+        print_pause("The pirate attacks you!\n")
+        print_pause("You feel ready for this, what with having your new sword.\n")
 
     while True:
 
@@ -45,17 +53,17 @@ def fight():
             
             if "sword_taken" in choices:
                 attack_with_sword()
+                play_again()
                 break
             elif "sword_taken" not in choices:
                 attack_without_sword()
+                play_again()
                 break
         elif fight_response == '2':
             print_pause("You run back into the field. Luckily, you don't seem to have been followed.\n")
             main_theme()
         else:
             print_pause("Sorry, I don't understand.Please Enter number 1 or 2.\n")
-
-    play_again()
 
 def cave():
 
@@ -101,6 +109,7 @@ def attack_without_sword():
         print_pause("You do your best...\n")
         print_pause("but your dagger is no match for the pirate.\n")
         print_pause("You have been defeated!.\n")
+    
 
 def play_again():
 
@@ -110,10 +119,12 @@ def play_again():
 
         if play_again_response == 'y':
             print_pause("Excellent! Restarting the game ...\n")
+            choices.clear()
             play_game()
         elif play_again_response == 'n':
-            print_pause("Thank you for supporting the Game.See you soon again...\n")
-
+            choices.clear()
+            break
+    #print_pause("Thank you for supporting the Game.See you soon again...\n")
         else:
             print_pause("Sorry, I don't understand.Please Enter number 'y' or 'n'.\n")
 
@@ -123,25 +134,3 @@ def play_game():
     main_theme()
 
 play_game()
-
-
-        
-
-#while True:
-    #print_pause("Enter 1 to knock on the door of the house.\n")
-    #print_pause("Enter 2 to peer into the cave.\n")
-    #response = int(input("What would you like to do?\n"))
-
-    #if response == 1:
-        #fight()
-
-#while True:
-
-        #sword_choice = int(input("Press 1 to select Magical Sword of Ogoroth or Press 2 to select Sword of Zeus")  
-        #if sword_choice == 1:
-            #print_pause("Great choice !")
-            ##elif sword_choice == 2:
-            #print_pause("A ranged attack that silences enemies with bolt of electricity")
-            ##break
-        #else:
-            #print_pause("Sorry, I don't understand.Please Enter number 1 or 2")
