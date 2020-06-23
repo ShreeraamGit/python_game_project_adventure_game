@@ -7,7 +7,7 @@ enemy = random.choice(random_enemy)
 
 def print_pause(message_to_print):
     print(message_to_print)
-    time.sleep(.5)
+    time.sleep(2)
 
 
 def intro():
@@ -17,9 +17,9 @@ def intro():
                 " filled with grass and yellow wildflowers.\n")
     print_pause(f"Rumor has it that a {enemy} is somewhere around here,"
                 "and has been terrifying the nearby village.\n")
-    print_pause("In Front of you there is house and"
+    print_pause("In Front of you there is house and "
                 "to your right there is a dark cave.\n")
-    print_pause("In your hand you hold your simple,"
+    print_pause("In your hand you hold your simple, "
                 "yet trusty (but not very effective) dagger.\n")
 
 
@@ -32,7 +32,7 @@ def pirate_attack_msg():
     time.sleep(1)
     print_pause("You approach the door of the house.\n")
     print_pause(f"You are about to knock when the door opens,"
-                "and out steps a dangerous {enemy}.\n")
+                f"and out steps a dangerous {enemy}.\n")
     print_pause(f"Eep! This is the {enemy}'s house!\n")
     print_pause(f"The {enemy} attacks you!\n")
 
