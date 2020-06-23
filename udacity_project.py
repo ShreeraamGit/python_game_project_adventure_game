@@ -111,7 +111,7 @@ def sword_pick():
     while True:
         sword_msg()
 
-        sword_plr_response = input("If yes 'Press 1' or 'Press 2' for no.\n")
+        sword_plr_response = input("If YES 'Press 1' or 'Press 2' for NO.\n")
 
         if sword_plr_response == "1":
             print_pause("Great Choice...\n")
@@ -125,8 +125,26 @@ def sword_pick():
         else:
             print_pause("Sorry, I don't understand.Please Enter number 1 or 2.\n")
 
+def play_again():
+    while True:
+        play_again_response = input("Do you wish to play aagin 1) Restart or (2) Quit?\n")
+
+        if play_again_response == "1":
+            print_pause("Excellent....Restarting....!")
+            play_game()
+        elif play_again_response == "2":
+            print_pause("Thank you for playing the game. See you soon again.\n")
+            break
+        else:
+            print_pause("Sorry, I don't understand.Please Enter number 1 or 2.\n")
+        break
+        
+
+
+
 def play_game():
     intro()          
     field()
+    play_again()
 
 play_game()
